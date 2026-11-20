@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marie Girschewski · Strategy & Transformation</title>
+<meta name="description" content="Marie Girschewski – Strategy & Transformation. Transforming people, organisation and technology together. Always human-first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAFA; --surface:#FFFFFF; --ink:#111827; --muted:#4B5563; --soft:#6B7280;
+    --line:#E5E7EB; --dot:#111827; --rail:#9CA3AF;
+    --head:'Space Grotesk', Inter, system-ui, sans-serif;
+    --body:Inter, system-ui, -apple-system, sans-serif;
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:80px}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+  a{color:var(--ink); text-underline-offset:3px}
+  a:hover{color:var(--muted)}
+  :focus-visible{outline:2px solid var(--ink); outline-offset:3px; border-radius:4px}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+  .skip{position:absolute; left:-999px; top:8px; background:var(--ink); color:#fff; padding:8px 12px; border-radius:6px}
+  .skip:focus{left:8px; z-index:20}
+
+  /* Nav */
+  header.nav{position:sticky; top:0; z-index:10; background:rgba(250,250,250,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  header.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px; flex-wrap:wrap}
+  .brand{font-family:var(--head); font-weight:700; font-size:18px; text-decoration:none; letter-spacing:-.01em}
+  nav ul{list-style:none; display:flex; flex-wrap:wrap; gap:4px 20px; margin:0; padding:0}
+  nav a{font-size:14px; font-weight:500; color:var(--muted); text-decoration:none; padding:10px 0; display:inline-block}
+  nav a:hover{color:var(--ink)}
+
+  /* Dots motif */
+  .dots{position:relative; display:flex; justify-content:space-between; align-items:center; width:120px; height:12px}
+  .dots::before{content:""; position:absolute; left:6px; right:6px; top:50%; height:1px; background:var(--rail)}
+  .dots i{position:relative; width:10px; height:10px; border-radius:50%; background:var(--dot)}
+
+  section{padding:96px 0; border-bottom:1px solid var(--line)}
+  .eyebrow{display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 20px}
+  .eyebrow .dots{width:56px}
+  h1,h2,h3{font-family:var(--head); letter-spacing:-.025em; line-height:1.1; margin:0}
+  h2{font-size:clamp(30px,4vw,42px); max-width:760px}
+  .lead{font-size:19px; color:var(--muted); max-width:680px; margin:18px 0 0}
+
+  /* Hero */
+  .hero{padding:120px 0 104px}
+  .hero .name{font-size:15px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 24px}
+  .hero h1{font-size:clamp(40px,6.4vw,72px); max-width:900px}
+  .hero .sub{font-family:var(--head); font-size:clamp(22px,2.6vw,28px); font-weight:500; color:var(--muted); margin:18px 0 0; letter-spacing:-.01em}
+  .hero .dots{width:300px; margin:44px 0 12px}
+  .hero .labels{display:flex; justify-content:space-between; width:300px; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:44px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border-radius:999px; font-weight:600; font-size:15px; text-decoration:none; border:1.5px solid var(--ink)}
+  .btn.primary{background:var(--ink); color:#fff}
+  .btn.primary:hover{background:#374151; border-color:#374151; color:#fff}
+  .btn.ghost{color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink); color:#fff}
+
+  /* POV */
+  .pov blockquote{margin:0; font-family:var(--head); font-size:clamp(26px,3.6vw,40px); line-height:1.2; letter-spacing:-.02em; max-width:880px}
+  .pov blockquote span{color:var(--soft)}
+  .pov p.statement{font-size:20px; color:var(--muted); max-width:720px; margin:28px 0 0}
+
+  /* Pillars */
+  .grid3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-top:48px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px}
+  .pillar .step{display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .pillar .step i{width:10px; height:10px; border-radius:50%; background:var(--dot)}
+  .pillar h3{font-size:26px; margin:14px 0 10px}
+  .pillar p{margin:0 0 16px; color:var(--muted)}
+  .pillar ul{margin:0; padding-left:18px; color:var(--ink); font-size:15px}
+  .pillar li{margin:4px 0}
+
+  /* Playbook */
+  .filters{display:flex; flex-wrap:wrap; gap:8px; margin-top:36px}
+  .filters button{font:inherit; font-size:14px; font-weight:600; min-height:44px; padding:0 18px; border-radius:999px; border:1.5px solid var(--line); background:var(--surface); color:var(--muted); cursor:pointer}
+  .filters button:hover{border-color:var(--ink); color:var(--ink)}
+  .filters button[aria-pressed="true"]{background:var(--ink); border-color:var(--ink); color:#fff}
+  .projects{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:20px; margin-top:24px}
+  .project{display:flex; flex-direction:column; gap:12px}
+  .project[hidden]{display:none}
+  .meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+  .tag{font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:4px 10px}
+  .context{font-size:14px; color:var(--soft)}
+  .project h3{font-size:22px}
+  .project .problem{margin:0; color:var(--muted)}
+  .project details{border-top:1px solid var(--line); padding-top:12px; margin-top:auto}
+  .project summary{cursor:pointer; font-weight:600; font-size:15px; list-style:none; min-height:44px; display:flex; align-items:center}
+  .project summary::-webkit-details-marker{display:none}
+  .project summary::after{content:"+"; margin-left:8px; font-family:var(--head); font-size:20px; line-height:1}
+  .project details[open] summary::after{content:"–"}
+  .project dl{margin:4px 0 0}
+  .project dt{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--soft); margin-top:14px}
+  .project dd{margin:4px 0 0; font-size:15.5px}
+  .note{font-size:14px; color:var(--muted); background:#F3F4F6; border-radius:10px; padding:10px 12px; margin-top:14px}
+
+  /* Journey */
+  .timeline{list-style:none; margin:48px 0 0; padding:0; position:relative}
+  .timeline::before{content:""; position:absolute; left:5px; top:8px; bottom:8px; width:1px; background:var(--rail)}
+  .timeline li{position:relative; padding:0 0 40px 40px}
+  .timeline li:last-child{padding-bottom:0}
+  .timeline li::before{content:""; position:absolute; left:0; top:7px; width:11px; height:11px; border-radius:50%; background:var(--dot)}
+  .timeline .when{font-size:13px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--soft)}
+  .timeline h3{font-size:22px; margin:6px 0 8px}
+  .timeline p{margin:0; color:var(--muted); max-width:700px}
+  .timeline .lesson{color:var(--ink); margin-top:8px}
+  .timeline .lesson strong{font-weight:600}
+
+  /* Principles */
+  .principles{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-top:48px}
+  .principle h3{font-size:20px; margin:0 0 8px}
+  .principle p{margin:0; color:var(--muted); font-size:15.5px}
+
+  /* Contact */
+  .contact{border-bottom:0}
+  .contact .links{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px}
+  footer{padding:32px 0 48px; color:var(--soft); font-size:14px}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px}
+
+  @media (max-width:860px){
+    .grid3,.principles{grid-template-columns:1fr}
+    .projects{grid-template-columns:1fr}
+    section{padding:72px 0}
+    .hero{padding:80px 0 72px}
+  }
+  @media (max-width:560px){
+    nav ul{gap:0 16px}
+    .hero .dots,.hero .labels{width:100%; max-width:300px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Marie Girschewski</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#belief">Belief</a></li>
+        <li><a href="#bring">What I bring</a></li>
+        <li><a href="#playbook">Playbook</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#work">How I work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="name">Marie Girschewski · Strategy &amp; Transformation</p>
+      <h1>Transforming people, organisation and technology together.</h1>
+      <p class="sub">Always human-first.</p>
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="labels" aria-hidden="true"><span>People</span><span>Organisation</span><span>Technology</span></div>
+      <div class="cta">
+        <a class="btn primary" href="#playbook">See my work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POINT OF VIEW -->
+  <section class="pov" id="belief">
+    <div class="wrap">
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>What I believe</p>
+      <blockquote>
+        Adopting AI is not the same as becoming AI-enabled. <span>One adds tools on top of how you work; the other transforms the work itself, creating real impact rather than just more usage.</span>
+      </blockquote>
+      <p class="statement">I drive that transformation: from defining the vision and shaping the operating model to building and deploying AI agents. Always human-first.</p>
+    </div>
+  </section>
+
+  <!-- WHAT I BRING -->
+  <section id="bring">
+    <div class="wrap">
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>What I bring</p>
+      <h2>From the vision, through the operating model, down to the AI agents.</h2>
+      <div class="grid3">
+        <article class="card pillar">
+          <div class="step"><i aria-hidden="true"></i>Vision</div>
+          <h3>Shape</h3>
+          <p>Turning strategy into clear priorities, operating rhythms and performance frameworks leadership can steer with.</p>
+          <ul>
+            <li>Strategic planning &amp; performance cadence</li>
+            <li>KPI &amp; OKR frameworks</li>
+            <li>Governance &amp; decision rights</li>
+          </ul>
+        </article>
+        <article class="card pillar">
+          <div class="step"><i aria-hidden="true"></i>Operating model</div>
+          <h3>Design</h3>
+          <p>Designing how the organisation works, and bringing people along so the change actually sticks.</p>
+          <ul>
+            <li>Operating model &amp; organisation design</li>
+            <li>Organisational health diagnostics</li>
+            <li>Change management &amp; adoption</li>
+          </ul>
+        </article>
+        <article class="card pillar">
+          <div class="step"><i aria-hidden="true"></i>AI agents</div>
+          <h3>Build</h3>
+          <p>Building the automations and agents hands-on, and deciding where humans stay in the loop.</p>
+          <ul>
+            <li>AI agents &amp; agentic workflows</li>
+            <li>Automations &amp; AI context layers</li>
+            <li>AI-powered ways of working</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYBOOK -->
+  <section id="playbook">
+    <div class="wrap">
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Playbook</p>
+      <h2>Projects, from problem to result.</h2>
+      <p class="lead">A selection of transformations I've worked on, in consulting and inside a SaaS scale-up. Open a project to see the approach and the outcome.</p>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="ai" aria-pressed="false">AI &amp; automation</button>
+        <button type="button" data-filter="strategy" aria-pressed="false">Strategy execution</button>
+        <button type="button" data-filter="org" aria-pressed="false">Org design</button>
+        <button type="button" data-filter="change" aria-pressed="false">Change</button>
+      </div>
+
+      <div class="projects">
+
+        <article class="card project" data-tags="ai">
+          <div class="meta"><span class="tag">AI &amp; automation</span><span class="context">SaaS scale-up · 350 people</span></div>
+          <h3>One source of truth for people and AI</h3>
+          <p class="problem">Project data was scattered across 5+ tools, making it hard to see priorities, avoid duplicated effort or put AI to real use.</p>
+          <details>
+            <summary>See how</summary>
+            <dl>
+              <dt>Approach</dt>
+              <dd>Challenged a planned tool switch and aligned stakeholders on a solution built on business needs. Leading the consolidation into two tools, connected by an AI context layer, and building the agentic workflows and Claude skills behind new AI-powered project standards.</dd>
+              <dt>Result</dt>
+              <dd>Project data that both people and AI can access, the foundation for AI-powered project management across the company.</dd>
+            </dl>
+            <p class="note">In progress: [add adoption or time-saving results once you can measure them].</p>
+          </details>
+        </article>
+
+        <article class="card project" data-tags="ai strategy">
+          <div class="meta"><span class="tag">AI &amp; automation</span><span class="context">SaaS scale-up · 8 teams</span></div>
+          <h3>An agent-supported performance cadence</h3>
+          <p class="problem">Manual steps and hand-offs made review prep last-minute, so leaders spent meetings reviewing numbers instead of discussing solutions.</p>
+          <details>
+            <summary>See how</summary>
+            <dl>
+              <dt>Approach</dt>
+              <dd>Mapped the review process end to end: what to automate, where agents add value, and where humans stay in the loop. Built solutions from simple automations (such as reminders) up to agents enriched through the AI context layer.</dd>
+              <dt>Result</dt>
+              <dd>Leaders get performance insights earlier, freeing meeting time for analysis and decisions.</dd>
+            </dl>
+            <p class="note">[Optional: add how much prep time this saves, once measured.]</p>
+          </details>
+        </article>
+
+        <article class="card project" data-tags="strategy">
+          <div class="meta"><span class="tag">Strategy execution</span><span class="context">SaaS scale-up · company-wide</span></div>
+          <h3>From tracking activity to measuring impact</h3>
+          <p class="problem">Performance tracking focused on activity rather than impact, with little visibility on how strategy was actually being executed.</p>
+          <details>
+            <summary>See how</summary>
+            <dl>
+              <dt>Approach</dt>
+              <dd>Owned and redesigned the OKR cycles, then, as the company matured, co-designed a company-wide KPI framework with executive leadership through workshops. Run the monthly and quarterly performance cadence that keeps teams accountable.</dd>
+              <dt>Result</dt>
+              <dd>Leadership can spot performance gaps and prioritise actions, measuring impact rather than activity.</dd>
+            </dl>
+          </details>
+        </article>
+
+        <article class="card project" data-tags="org strategy">
+          <div class="meta"><span class="tag">Org design</span><span class="context">SaaS scale-up · 5 teams</span></div>
+          <h3>Clear ownership of churn across the customer lifecycle</h3>
+          <p class="problem">Churn stayed high despite retention initiatives, with no clear ownership or visibility of impact across five teams.</p>
+          <details>
+            <summary>See how</summary>
+            <dl>
+              <dt>Approach</dt>
+              <dd>Defined roles, decision rights and operating mechanisms along the customer lifecycle, created a churn reporting standard, and ran recurring lifecycle reviews (governance, agendas, reporting) with senior stakeholders.</dd>
+              <dt>Result</dt>
+              <dd>From zero visibility to clear targets and tracked results, so decisions could be made proactively.</dd>
+            </dl>
+          </details>
+        </article>
+
+        <article class="card project" data-tags="change">
+          <div class="meta"><span class="tag">Change</span><span class="context">Aerospace &amp; Defense · ~25,000 people</span></div>
+          <h3>Bringing people along in a finance digitalisation</h3>
+          <p class="problem">A multi-unit finance function was moving to new systems and processes (incl. SAP S/4HANA) across Europe, and needed people to actually adopt them.</p>
+          <details>
+            <summary>See how</summary>
+            <dl>
+              <dt>Approach</dt>
+              <dd>Led the cross-functional change management workstream: designing the change and communication strategies, managing senior stakeholders and supporting adoption across functions.</dd>
+              <dt>Result</dt>
+              <dd>[Add the outcome you're comfortable stating, e.g. what changed for the teams or how adoption went.]</dd>
+            </dl>
+          </details>
+        </article>
+
+        <article class="card project" data-tags="org">
+          <div class="meta"><span class="tag">Org design</span><span class="context">IT Education · ~2,500 people</span></div>
+          <h3>Designing a central Technology Hub</h3>
+          <p class="problem">Key capabilities were spread across the organisation, and a new central Technology Hub needed a structure and processes aligned to shared design principles.</p>
+          <details>
+            <summary>See how</summary>
+            <dl>
+              <dt>Approach</dt>
+              <dd>Led the operating model design stream: defining organisational structure, critical processes and capabilities, then building transition scenarios and a roadmap.</dd>
+              <dt>Result</dt>
+              <dd>A target operating model and implementation roadmap, with senior stakeholders advised on the approach.</dd>
+            </dl>
+          </details>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey">
+    <div class="wrap">
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Journey</p>
+      <h2>People, then organisation, then technology.</h2>
+      <p class="lead">My consulting years took me hands-on into transformations at every stage, and each one taught me something.</p>
+      <ol class="timeline">
+        <li>
+          <span class="when">Consulting · 2019–2021</span>
+          <h3>Learning &amp; Training</h3>
+          <p>Redesigning development frameworks aligned with organisational strategy.</p>
+          <p class="lesson"><strong>What I learned:</strong> combining new skills with real business use cases and existing expertise is what turns individual learning into organisational impact.</p>
+        </li>
+        <li>
+          <span class="when">Consulting · 2019–2025</span>
+          <h3>Change Management</h3>
+          <p>Leading change and communication workstreams on large technology-enabled and agile transformations.</p>
+          <p class="lesson"><strong>What I learned:</strong> how to navigate the change curve, why Change Ambassadors are key, and why communication and transparency matter throughout.</p>
+        </li>
+        <li>
+          <span class="when">Consulting · 2021–2025</span>
+          <h3>Operating Model &amp; Organisational Health</h3>
+          <p>Diagnosing organisational effectiveness and designing target operating models across industries and countries.</p>
+          <p class="lesson"><strong>What I learned:</strong> strategy, technology and people must pursue the same objectives, or strategy never translates into execution.</p>
+        </li>
+        <li>
+          <span class="when">SaaS scale-up · 2025–today</span>
+          <h3>Building with AI</h3>
+          <p>Turning strategy into operating rhythms, running the company-wide performance cadence, and leading an AI transformation workstream, building automations and agents hands-on.</p>
+          <p class="lesson"><strong>What I'm learning:</strong> AI is different from previous digital transformations. It changes the roles people play, not just the tools they use.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section id="work">
+    <div class="wrap">
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>How I work</p>
+      <h2>The principles behind the work.</h2>
+      <div class="principles">
+        <div class="card principle">
+          <h3>Human-first</h3>
+          <p>Technology serves people, not the other way round. I design for the people who will live with the change.</p>
+        </div>
+        <div class="card principle">
+          <h3>Systems over patches</h3>
+          <p>I look for the root cause in how the organisation operates, then fix the system rather than the symptom.</p>
+        </div>
+        <div class="card principle">
+          <h3>Strategy counts when it's executed</h3>
+          <p>A strategy is only as good as the priorities, rhythms and decisions that carry it into daily work.</p>
+        </div>
+        <div class="card principle">
+          <h3>Build to understand</h3>
+          <p>I build the automations and agents myself, because you can't redesign work around AI you haven't used.</p>
+        </div>
+        <div class="card principle">
+          <h3>Honest about impact</h3>
+          <p>I measure what changed, and I'm clear about what I can and can't attribute to the work.</p>
+        </div>
+        <div class="card principle">
+          <h3>[Your sixth principle]</h3>
+          <p>[Optional: add one more, or delete this card.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Contact</p>
+      <h2>Let's talk about how your organisation works with AI.</h2>
+      <p class="lead">[Optional line, e.g. "I'm currently exploring my next role in strategy and transformation."] I'm always happy to talk about organisations, AI and transformation.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:girschewskima@gmail.com">Email me</a>
+        <a class="btn ghost" href="[YOUR LINKEDIN URL]">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Marie Girschewski</span>
+    <span>Barcelona · Built with AI, human-first</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.filters button');
+    var projects = document.querySelectorAll('.project');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-filter');
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+        projects.forEach(function (p) {
+          var tags = (p.getAttribute('data-tags') || '').split(' ');
+          p.hidden = !(f === 'all' || tags.indexOf(f) !== -1);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
