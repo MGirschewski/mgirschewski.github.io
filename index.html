@@ -7,29 +7,30 @@
 <meta name="description" content="Marie Girschewski – Strategy & Transformation. Transforming people, organisation and technology together. Always human-first.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FAFAFA; --surface:#FFFFFF; --ink:#111827; --muted:#4B5563; --soft:#6B7280;
-    --line:#E5E7EB; --dot:#111827; --rail:#9CA3AF;
-    --head:'Space Grotesk', Inter, system-ui, sans-serif;
+    --bg:#F5F3EC; --surface:#FBFAF5; --ink:#1D2117; --muted:#555A48; --soft:#666A57;
+    --line:#E3E0D4; --dot:#1D2117; --rail:#B9B8A6;
+    --people:#DADDBF; --org:#A3AE7A; --tech:#4C5E3A; --tint:#ECEDDD;
+    --head:'Instrument Serif', Georgia, 'Times New Roman', serif;
     --body:Inter, system-ui, -apple-system, sans-serif;
     --max:1080px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth; scroll-padding-top:80px}
   body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
-  a{color:var(--ink); text-underline-offset:3px}
-  a:hover{color:var(--muted)}
-  :focus-visible{outline:2px solid var(--ink); outline-offset:3px; border-radius:4px}
+  a{color:var(--tech); text-underline-offset:3px}
+  a:hover{color:var(--ink)}
+  :focus-visible{outline:2px solid var(--tech); outline-offset:3px; border-radius:4px}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
   .skip{position:absolute; left:-999px; top:8px; background:var(--ink); color:#fff; padding:8px 12px; border-radius:6px}
   .skip:focus{left:8px; z-index:20}
 
   /* Nav */
-  header.nav{position:sticky; top:0; z-index:10; background:rgba(250,250,250,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  header.nav{position:sticky; top:0; z-index:10; background:rgba(245,243,236,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
   header.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px; flex-wrap:wrap}
-  .brand{font-family:var(--head); font-weight:700; font-size:18px; text-decoration:none; letter-spacing:-.01em}
+  .brand{font-family:var(--head); font-weight:400; font-size:24px; text-decoration:none; letter-spacing:-.01em; color:var(--ink)}
   nav ul{list-style:none; display:flex; flex-wrap:wrap; gap:4px 20px; margin:0; padding:0}
   nav a{font-size:14px; font-weight:500; color:var(--muted); text-decoration:none; padding:10px 0; display:inline-block}
   nav a:hover{color:var(--ink)}
@@ -38,39 +39,50 @@
   .dots{position:relative; display:flex; justify-content:space-between; align-items:center; width:120px; height:12px}
   .dots::before{content:""; position:absolute; left:6px; right:6px; top:50%; height:1px; background:var(--rail)}
   .dots i{position:relative; width:10px; height:10px; border-radius:50%; background:var(--dot)}
+  .dots i:nth-child(1){background:var(--people)} .dots i:nth-child(2){background:var(--org)} .dots i:nth-child(3){background:var(--tech)}
 
   section{padding:96px 0; border-bottom:1px solid var(--line)}
   .eyebrow{display:flex; align-items:center; gap:14px; font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 20px}
   .eyebrow .dots{width:56px}
-  h1,h2,h3{font-family:var(--head); letter-spacing:-.025em; line-height:1.1; margin:0}
-  h2{font-size:clamp(30px,4vw,42px); max-width:760px}
+  h1,h2,h3{font-family:var(--head); font-weight:400; letter-spacing:-.01em; line-height:1.05; margin:0}
+  h2{font-size:clamp(36px,4.6vw,52px); max-width:780px}
   .lead{font-size:19px; color:var(--muted); max-width:680px; margin:18px 0 0}
 
   /* Hero */
-  .hero{padding:120px 0 104px}
+  .hero{padding:104px 0 96px}
+  .hero-grid{display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:56px; align-items:center}
+  .portrait{margin:0; justify-self:end; width:100%; max-width:400px}
+  .portrait{background:transparent; padding:0}
+  .portrait img{display:block; width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:24px; background:var(--line)}
   .hero .name{font-size:15px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 24px}
-  .hero h1{font-size:clamp(40px,6.4vw,72px); max-width:900px}
-  .hero .sub{font-family:var(--head); font-size:clamp(22px,2.6vw,28px); font-weight:500; color:var(--muted); margin:18px 0 0; letter-spacing:-.01em}
-  .hero .dots{width:300px; margin:44px 0 12px}
-  .hero .labels{display:flex; justify-content:space-between; width:300px; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .hero h1{font-size:clamp(46px,6.2vw,80px); max-width:660px; line-height:1}
+  .hero .sub{font-family:var(--head); font-style:italic; font-size:clamp(26px,3vw,34px); font-weight:400; color:var(--muted); margin:16px 0 0}
+  .hero .dots{width:360px; height:32px; margin:44px 0 12px}
+  .hero .dots i{width:32px; height:32px}
+  .hero .labels span:nth-child(2){text-align:center} .hero .labels span:nth-child(3){text-align:right}
+  .hero .labels{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); width:360px; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:44px}
-  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border-radius:999px; font-weight:600; font-size:15px; text-decoration:none; border:1.5px solid var(--ink)}
-  .btn.primary{background:var(--ink); color:#fff}
-  .btn.primary:hover{background:#374151; border-color:#374151; color:#fff}
-  .btn.ghost{color:var(--ink)}
-  .btn.ghost:hover{background:var(--ink); color:#fff}
+  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border-radius:999px; font-weight:600; font-size:15px; text-decoration:none; border:1.5px solid var(--tech)}
+  .btn.primary{background:var(--tech); color:#FBFAF5}
+  .btn.primary:hover{background:#3B4A2D; border-color:#3B4A2D; color:#FBFAF5}
+  .btn.ghost{color:var(--tech)}
+  .btn.ghost:hover{background:var(--tech); color:#FBFAF5}
 
   /* POV */
-  .pov blockquote{margin:0; font-family:var(--head); font-size:clamp(26px,3.6vw,40px); line-height:1.2; letter-spacing:-.02em; max-width:880px}
+  .pov blockquote{margin:0; font-family:var(--head); font-size:clamp(32px,4.2vw,48px); line-height:1.12; max-width:900px}
   .pov blockquote span{color:var(--soft)}
+  .pov blockquote em{font-style:italic}
   .pov p.statement{font-size:20px; color:var(--muted); max-width:720px; margin:28px 0 0}
 
   /* Pillars */
   .grid3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-top:48px}
   .card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px}
   .pillar .step{display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
-  .pillar .step i{width:10px; height:10px; border-radius:50%; background:var(--dot)}
-  .pillar h3{font-size:26px; margin:14px 0 10px}
+  .pillar .step i{width:12px; height:12px; border-radius:50%; background:var(--dot)}
+  .pillar{position:relative}
+  .pillar:nth-child(1) .step i{background:var(--people); box-shadow:inset 0 0 0 1px var(--org)}
+  .pillar:nth-child(2) .step i{background:var(--org)} .pillar:nth-child(3) .step i{background:var(--tech)}
+  .pillar h3{font-size:34px; margin:12px 0 10px}
   .pillar p{margin:0 0 16px; color:var(--muted)}
   .pillar ul{margin:0; padding-left:18px; color:var(--ink); font-size:15px}
   .pillar li{margin:4px 0}
@@ -78,15 +90,15 @@
   /* Playbook */
   .filters{display:flex; flex-wrap:wrap; gap:8px; margin-top:36px}
   .filters button{font:inherit; font-size:14px; font-weight:600; min-height:44px; padding:0 18px; border-radius:999px; border:1.5px solid var(--line); background:var(--surface); color:var(--muted); cursor:pointer}
-  .filters button:hover{border-color:var(--ink); color:var(--ink)}
-  .filters button[aria-pressed="true"]{background:var(--ink); border-color:var(--ink); color:#fff}
+  .filters button:hover{border-color:var(--tech); color:var(--tech)}
+  .filters button[aria-pressed="true"]{background:var(--tech); border-color:var(--tech); color:#FBFAF5}
   .projects{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:20px; margin-top:24px}
   .project{display:flex; flex-direction:column; gap:12px}
   .project[hidden]{display:none}
   .meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
-  .tag{font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:4px 10px}
+  .tag{font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); background:transparent; border:1px solid var(--line); border-radius:999px; padding:4px 10px}
   .context{font-size:14px; color:var(--soft)}
-  .project h3{font-size:22px}
+  .project h3{font-size:28px}
   .project .problem{margin:0; color:var(--muted)}
   .project details{border-top:1px solid var(--line); padding-top:12px; margin-top:auto}
   .project summary{cursor:pointer; font-weight:600; font-size:15px; list-style:none; min-height:44px; display:flex; align-items:center}
@@ -96,27 +108,33 @@
   .project dl{margin:4px 0 0}
   .project dt{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--soft); margin-top:14px}
   .project dd{margin:4px 0 0; font-size:15.5px}
-  .note{font-size:14px; color:var(--muted); background:#F3F4F6; border-radius:10px; padding:10px 12px; margin-top:14px}
+  .note{font-size:14px; color:var(--muted); background:var(--tint); border-radius:10px; padding:10px 12px; margin-top:14px}
 
   /* Journey */
   .timeline{list-style:none; margin:48px 0 0; padding:0; position:relative}
   .timeline::before{content:""; position:absolute; left:5px; top:8px; bottom:8px; width:1px; background:var(--rail)}
   .timeline li{position:relative; padding:0 0 40px 40px}
   .timeline li:last-child{padding-bottom:0}
-  .timeline li::before{content:""; position:absolute; left:0; top:7px; width:11px; height:11px; border-radius:50%; background:var(--dot)}
+  .timeline li::before{content:""; position:absolute; left:-4px; top:4px; width:18px; height:18px; border-radius:50%; background:var(--dot)}
+  .timeline li:nth-child(1)::before{background:var(--tech)}
+  .timeline li:nth-child(2)::before{background:var(--org)}
+  .timeline li:nth-child(3)::before,.timeline li:nth-child(4)::before{background:var(--people); box-shadow:inset 0 0 0 1px var(--org)}
   .timeline .when{font-size:13px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--soft)}
-  .timeline h3{font-size:22px; margin:6px 0 8px}
+  .timeline h3{font-size:30px; margin:6px 0 4px}
+  .timeline .org{font-size:14px; font-weight:600; color:var(--soft); margin:0 0 10px}
   .timeline p{margin:0; color:var(--muted); max-width:700px}
   .timeline .lesson{color:var(--ink); margin-top:8px}
   .timeline .lesson strong{font-weight:600}
 
   /* Principles */
   .principles{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-top:48px}
-  .principle h3{font-size:20px; margin:0 0 8px}
+  .principle h3{font-size:26px; margin:0 0 8px}
+
   .principle p{margin:0; color:var(--muted); font-size:15.5px}
 
   /* Contact */
   .contact{border-bottom:0}
+  .contact .lead{color:var(--ink)}
   .contact .links{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px}
   footer{padding:32px 0 48px; color:var(--soft); font-size:14px}
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px}
@@ -125,11 +143,13 @@
     .grid3,.principles{grid-template-columns:1fr}
     .projects{grid-template-columns:1fr}
     section{padding:72px 0}
-    .hero{padding:80px 0 72px}
+    .hero{padding:56px 0 72px}
+    .hero-grid{grid-template-columns:1fr; gap:32px}
+    .portrait{order:-1; justify-self:start; max-width:220px}
   }
   @media (max-width:560px){
     nav ul{gap:0 16px}
-    .hero .dots,.hero .labels{width:100%; max-width:300px}
+    .hero .dots,.hero .labels{width:100%; max-width:340px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -144,7 +164,7 @@
       <ul>
         <li><a href="#belief">Belief</a></li>
         <li><a href="#bring">What I bring</a></li>
-        <li><a href="#playbook">Playbook</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#journey">Journey</a></li>
         <li><a href="#work">How I work</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -157,16 +177,21 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="wrap">
+    <div class="wrap hero-grid">
+      <div>
       <p class="name">Marie Girschewski · Strategy &amp; Transformation</p>
       <h1>Transforming people, organisation and technology together.</h1>
       <p class="sub">Always human-first.</p>
       <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="labels" aria-hidden="true"><span>People</span><span>Organisation</span><span>Technology</span></div>
       <div class="cta">
-        <a class="btn primary" href="#playbook">See my work</a>
+        <a class="btn primary" href="#projects">See my work</a>
         <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
+      </div>
+      <figure class="portrait">
+        <img src="marie.jpg" alt="Portrait of Marie Girschewski smiling, wearing a beige blazer and white shirt" width="900" height="900">
+      </figure>
     </div>
   </section>
 
@@ -175,7 +200,7 @@
     <div class="wrap">
       <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>What I believe</p>
       <blockquote>
-        Adopting AI is not the same as becoming AI-enabled. <span>One adds tools on top of how you work; the other transforms the work itself, creating real impact rather than just more usage.</span>
+        Adopting AI is not the same as becoming <em>AI&#8209;enabled</em>. <span>One adds tools on top of how you work; the other transforms the work itself, creating real impact rather than just more usage.</span>
       </blockquote>
       <p class="statement">I drive that transformation: from defining the vision and shaping the operating model to building and deploying AI agents. Always human-first.</p>
     </div>
@@ -222,9 +247,9 @@
   </section>
 
   <!-- PLAYBOOK -->
-  <section id="playbook">
+  <section id="projects">
     <div class="wrap">
-      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Playbook</p>
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Projects</p>
       <h2>Projects, from problem to result.</h2>
       <p class="lead">A selection of transformations I've worked on, in consulting and inside a SaaS scale-up. Open a project to see the approach and the outcome.</p>
 
@@ -339,31 +364,35 @@
     <div class="wrap">
       <p class="eyebrow"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Journey</p>
       <h2>People, then organisation, then technology.</h2>
-      <p class="lead">My consulting years took me hands-on into transformations at every stage, and each one taught me something.</p>
+      <p class="lead">From training people, to transforming organisations, to building with AI. Each step taught me something.</p>
       <ol class="timeline">
         <li>
-          <span class="when">Consulting · 2019–2021</span>
-          <h3>Learning &amp; Training</h3>
-          <p>Redesigning development frameworks aligned with organisational strategy.</p>
-          <p class="lesson"><strong>What I learned:</strong> combining new skills with real business use cases and existing expertise is what turns individual learning into organisational impact.</p>
+          <span class="when">2025 – today · Barcelona</span>
+          <h3>Strategy &amp; Operations Manager</h3>
+          <p class="org">SaaS scale-up · 350 people</p>
+          <p>Run the company-wide performance cadence, partner with leadership on strategic planning, and lead an AI transformation workstream, building automations and agents hands-on.</p>
+          <p class="lesson"><strong>What I'm learning:</strong> AI is different from previous digital transformations. It changes the roles people play, not just the tools they use.</p>
         </li>
         <li>
-          <span class="when">Consulting · 2019–2025</span>
-          <h3>Change Management</h3>
-          <p>Leading change and communication workstreams on large technology-enabled and agile transformations.</p>
-          <p class="lesson"><strong>What I learned:</strong> how to navigate the change curve, why Change Ambassadors are key, and why communication and transparency matter throughout.</p>
-        </li>
-        <li>
-          <span class="when">Consulting · 2021–2025</span>
-          <h3>Operating Model &amp; Organisational Health</h3>
-          <p>Diagnosing organisational effectiveness and designing target operating models across industries and countries.</p>
+          <span class="when">2021 – 2025 · Barcelona</span>
+          <h3>Management Consultant → Strategy Consultant, Strategy &amp; Organisation</h3>
+          <p class="org">Global consultancy</p>
+          <p>Designed target operating models, led organisational redesign and change workstreams on large technology-enabled transformations (SAP S/4HANA, ServiceNow), ran organisational diagnostics for executive teams, and managed and coached analysts.</p>
           <p class="lesson"><strong>What I learned:</strong> strategy, technology and people must pursue the same objectives, or strategy never translates into execution.</p>
         </li>
         <li>
-          <span class="when">SaaS scale-up · 2025–today</span>
-          <h3>Building with AI</h3>
-          <p>Turning strategy into operating rhythms, running the company-wide performance cadence, and leading an AI transformation workstream, building automations and agents hands-on.</p>
-          <p class="lesson"><strong>What I'm learning:</strong> AI is different from previous digital transformations. It changes the roles people play, not just the tools they use.</p>
+          <span class="when">2019 – 2021 · Luxembourg</span>
+          <h3>Analyst → Consultant, Organisational Transformation &amp; Change</h3>
+          <p class="org">Global consultancy</p>
+          <p>Developed and implemented change management strategies, supported organisational redesign and workforce transition, and redesigned development frameworks for a learning &amp; development transformation.</p>
+          <p class="lesson"><strong>What I learned:</strong> how to navigate the change curve, why Change Ambassadors are key, and how combining new skills with real business use cases turns individual learning into organisational impact.</p>
+        </li>
+        <li>
+          <span class="when">2016 – 2019 · Stuttgart</span>
+          <h3>Team Assistant, Initiative for Job Seekers</h3>
+          <p class="org">Adult education &amp; training provider</p>
+          <p>Advised job seekers on their applications and delivered trainings to groups of up to 30 people.</p>
+          <p class="lesson"><strong>What I learned:</strong> learning only sticks when you hold people's attention and they have a real reason to engage.</p>
         </li>
       </ol>
     </div>
