@@ -53,9 +53,13 @@
   .hero-grid{display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:56px; align-items:center}
   .portrait{margin:0; justify-self:end; width:100%; max-width:400px}
   .portrait{position:relative; margin:0; padding:40px 36px 30px; justify-self:end; width:100%; max-width:480px}
+  .hl-word{text-decoration-line:underline; text-decoration-thickness:.14em; text-underline-offset:.12em; text-decoration-skip-ink:auto}
+  .hl-word.hp{text-decoration-color:var(--people)}
+  .hl-word.ho{text-decoration-color:var(--org)}
+  .hl-word.ht{text-decoration-color:var(--tech)}
   .portrait .frame{position:relative; z-index:2}
   .portrait .frame::before{content:""; position:absolute; z-index:-1; inset:18px -18px -18px 18px; border-radius:28px; background:var(--people); transform:rotate(3deg)}
-  .portrait img{display:block; width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:24px; background:var(--line)}
+  .portrait img{display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:24px; background:var(--line)}
   .callouts{list-style:none; margin:0; padding:0}
   .callout{position:absolute; z-index:5; display:flex; align-items:center; white-space:nowrap}
   .callout .tag-pill{font-family:'DM Mono', ui-monospace, monospace; font-weight:500; font-size:12.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink); background:var(--surface); border:1px solid var(--ink); border-radius:999px; padding:6px 12px}
@@ -66,10 +70,10 @@
   .callout .pt{display:block; width:7px; height:7px; border-radius:50%; background:var(--ink)}
   .c1{left:-26px; top:56%} .c2{left:-34px; top:74%}
   .c3{right:-30px; top:64%} .c4{right:-18px; top:80%}
-  .badge{position:absolute; z-index:6; right:-4px; top:0; width:112px; height:112px; border-radius:50%; background:var(--people); box-shadow:0 2px 8px rgba(29,33,23,.12); display:flex; align-items:center; justify-content:center}
+  .badge{position:absolute; z-index:6; right:-4px; top:0; width:112px; height:112px; border-radius:50%; background:#E6DDCB; box-shadow:0 2px 8px rgba(29,33,23,.12); display:flex; align-items:center; justify-content:center}
   .badge svg.ring{position:absolute; inset:0; width:100%; height:100%; animation:spin 22s linear infinite}
   .badge .ring text{font-family:'DM Mono', ui-monospace, monospace; font-size:10px; fill:var(--ink); text-transform:uppercase}
-  .badge .star{width:42px; height:42px; stroke:var(--tech); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; fill:none}
+  .badge .star{width:58px; height:58px; stroke:var(--tech); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; fill:none}
   @keyframes spin{to{transform:rotate(360deg)}}
   .hero .name{font-size:15px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 24px}
   .hero h1{font-size:clamp(46px,6.2vw,80px); max-width:660px; line-height:1}
@@ -78,7 +82,7 @@
   .hero .dots i{width:32px; height:32px}
   .hero .labels span:nth-child(2){text-align:center} .hero .labels span:nth-child(3){text-align:right}
   .hero .labels{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); width:360px; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
-  .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:44px}
+  .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:40px}
   .btn{display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border-radius:999px; font-weight:600; font-size:15px; text-decoration:none; border:1.5px solid var(--tech)}
   .btn.primary{background:var(--tech); color:#FBFAF5}
   .btn.primary:hover{background:#3B4A2D; border-color:#3B4A2D; color:#FBFAF5}
@@ -165,7 +169,7 @@
     .portrait{order:-1; justify-self:center; max-width:360px; padding:30px 30px 22px}
     .callout .tag-pill{font-size:10.5px; padding:4px 9px}
     .callout .leader{width:16px}
-    .badge{width:84px; height:84px} .badge .star{width:32px; height:32px} .badge .ring text{font-size:8.5px}
+    .badge{width:84px; height:84px} .badge .star{width:44px; height:44px} .badge .ring text{font-size:8.5px}
     .c1{left:-14px} .c2{left:-18px} .c3{right:-16px} .c4{right:-12px}
   }
   @media (max-width:560px){
@@ -201,17 +205,15 @@
     <div class="wrap hero-grid">
       <div>
       <p class="name">Marie Girschewski · Strategy &amp; Transformation</p>
-      <h1>Transforming people, organisation and technology together.</h1>
+      <h1>Transforming <span class="hl-word hp">people</span>, <span class="hl-word ho">organisation</span> and <span class="hl-word ht">technology</span> together.</h1>
       <p class="sub">Always human-first.</p>
-      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="labels" aria-hidden="true"><span>People</span><span>Organisation</span><span>Technology</span></div>
       <div class="cta">
         <a class="btn primary" href="#projects">See my work</a>
         <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
       </div>
       <figure class="portrait">
-        <div class="frame"><img src="marie.jpg" alt="Portrait of Marie Girschewski smiling, wearing a beige blazer and white shirt" width="900" height="900"></div>
+        <div class="frame"><img src="marie.jpg" alt="Portrait of Marie Girschewski smiling, wearing a beige blazer and white shirt" width="800" height="1000"></div>
         <ul class="callouts" aria-label="Quick facts">
           <li class="callout c1"><span class="tag-pill">3 languages</span><span class="leader" aria-hidden="true"></span><span class="pt" aria-hidden="true"></span></li>
           <li class="callout c2"><span class="tag-pill">Certified Systemic Consultant</span><span class="leader" aria-hidden="true"></span><span class="pt" aria-hidden="true"></span></li>
